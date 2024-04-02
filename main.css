@@ -1,0 +1,15 @@
+
+body {
+    font-family: Arial, sans-serif;
+}
+#pokemon-select {
+    margin-bottom: 20px;
+}
+#pokemon-info {
+    display: none;
+    text-align: center;
+}
+
+h1, h2 {
+    text-align: center;
+}
