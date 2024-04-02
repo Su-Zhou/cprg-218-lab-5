@@ -9,14 +9,22 @@
 </head>
 
 <body>
+<div class="pokeball-container">
+    <img class="pokeball" src="./Assets/ball-game-poke-sport-sports-svgrepo-com.svg">
+    </div>
+<div class="header-container">
 <h1>API Lab</h1>
-<h2>Pokemon API </h2>
+<h2>Pokedex with PokeAPI</h2>
+</div>
 
+<div class="selection-area">
 <select id="pokemon-select">
-  <option value="">Select a Pokémon</option>
+  <option value="">Select a Pokemon</option>
 </select>
+<button id="submit-button" class="button">Submit</button>
+</div>
 
-<div id="pokemon-info">
+ <div id="pokemon-info">
   <h2 id="pokemon-name"></h2>
   <img id="pokemon-image" src="" alt="Pokemon Image">
   <p><strong>Type(s):</strong> <span id="pokemon-types"></span></p>

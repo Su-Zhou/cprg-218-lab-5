@@ -1,3 +1,4 @@
+// does it link?
 console.log('Hello, World!');
 
 
@@ -26,8 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const heightElem = document.getElementById('pokemon-height');
   const weightElem = document.getElementById('pokemon-weight');
 
-  // fetching pokemon
-  fetch('https://pokeapi.co/api/v2/pokemon?limit=150')
+
+  // fetching the pokemon itself to appear?
+  fetch('https://pokeapi.co/api/v2/pokemon?limit=88')
       .then(response => response.json())
       .then(data => {
           data.results.forEach(pokemon => {
@@ -38,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
           });
       });
 
-  // selection of pokemon to display the stuff
+  // when you select a pokemon
   select.addEventListener('change', async () => {
       const selectedPokemonUrl = select.value;
       if (selectedPokemonUrl) {
@@ -51,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
               heightElem.textContent = pokemon.height;
               weightElem.textContent = pokemon.weight;
               infoDiv.style.display = 'block';
+
           } catch (error) {
               console.error('Error displaying Pokémon data:', error);
           }
@@ -59,3 +62,4 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   });
 });
+
