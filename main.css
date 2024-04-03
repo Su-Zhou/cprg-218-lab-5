@@ -1,11 +1,10 @@
 
 body, html {
     padding: 0;
-    font-family: Arial, sans-serif;
-    overflow:hidden;
+    font-family: Arial, Arial, Helvetica, sans-serif;
     margin: 0;
-
 }
+
 
 body {
     border: 50px solid #ca421d;
@@ -53,13 +52,28 @@ h2 {
     border-radius:8px 8px 0 0;
 }
 
-button {
-    border-radius: 20px;
+#pokemon-select {
+    border-radius: 50px;
+    padding: 10px;
     background-color: white;
     transition: 0.2s ease; 
     cursor: pointer; 
+    text-align:center;
 }
 
+#pokemon-select:hover {
+    background-color: rgb(185, 238, 201); 
+}
+
+button {
+    border-radius: 50px;
+    background-color: white;
+    transition: 0.2s ease; 
+    cursor: pointer; 
+    text-align:center;
+    margin-left: 10px;
+    padding: 10px;
+}
 button:hover {
     background-color: rgb(185, 238, 201); 
 }
@@ -71,23 +85,17 @@ button:hover {
     height: auto;
     justify-content: center;
     margin: 0 auto;
-    padding: 2px 16px;
-}
-
-#pokemon-info {
     margin: 0 auto;
     padding: 50px;
-  }
-  
+}
+
   img {
     max-width: 100%;
     height: auto;
-    display: block;
     margin: 0 auto;
   }
   
   .card {
-    border: 1px solid #ccc; 
     border-radius: 0 0 8px 8px; 
     padding: 20px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
@@ -95,10 +103,37 @@ button:hover {
   }
   
 
-  /* Example media query for responsiveness */
-  @media only screen and (max-width: 600px) {
-    #pokemon-info {
-      padding: 10px;
+/*Media queries for responsiveness*/
+@media (max-width: 768px) {
+    h1 {
+        text-align: center; 
+        margin: 10px;
+        padding: 0;
     }
-  }
 
+    #pokemon-name {
+        margin: 0;
+        text-align:center;
+    }
+    .button  {
+        margin: 10px;
+    }
+
+    #pokemon-info {
+        text-align: center; 
+    }
+
+    #pokemon-select{
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 1200px) {
+
+}
