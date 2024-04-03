@@ -14,24 +14,25 @@
     </div>
 <div class="header-container">
 <h1>API Lab</h1>
-<h2>Pokedex with PokeAPI</h2>
+<h2>PokéAPI</h2>
 </div>
 
 <div class="selection-area">
 <select id="pokemon-select">
-  <option value="">Select a Pokemon</option>
+  <option value="">Select a Pokémon</option>
 </select>
 <button id="submit-button" class="button">Submit</button>
 </div>
 
- <div id="pokemon-info">
-  <h2 id="pokemon-name"></h2>
-  <img id="pokemon-image" src="" alt="Pokemon Image">
-  <p><strong>Type(s):</strong> <span id="pokemon-types"></span></p>
-  <p><strong>Abilities:</strong> <span id="pokemon-abilities"></span></p>
-  <p><strong>Height:</strong> <span id="pokemon-height"></span></p>
-  <p><strong>Weight:</strong> <span id="pokemon-weight"></span></p>
-</div>
+<section class="pokemon-data">
+  <div id="pokemon-info" class="card">
+    <h2 id="pokemon-name"></h2>
+    <img id="pokemon-image" src="" alt="Pokemon Image">
+    <p><strong>Type(s):</strong> <span id="pokemon-types"></span></p>
+    <p><strong>Abilities:</strong> <span id="pokemon-abilities"></span></p>
+    <p><strong>Height:</strong> <span id="pokemon-height"></span></p>
+    <p><strong>Weight:</strong> <span id="pokemon-weight"></span></p>
+  </div>
     <script src="main.js" defer></script>
     </body>
 </html>

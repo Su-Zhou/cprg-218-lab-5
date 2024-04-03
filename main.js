@@ -1,4 +1,3 @@
-// does it link?
 console.log('Hello, World!');
 
 
@@ -15,6 +14,7 @@ async function fetchPokemonData(url) {
       console.error('Error fetching Pokémon data:', error);
   }
 }
+
 
 // all the info stuff
 document.addEventListener('DOMContentLoaded', () => {
@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
           });
       });
 
+
   // when you select a pokemon
   select.addEventListener('change', async () => {
       const selectedPokemonUrl = select.value;
@@ -62,4 +63,3 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   });
 });
-

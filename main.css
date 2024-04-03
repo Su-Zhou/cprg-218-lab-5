@@ -1,6 +1,5 @@
 
 body, html {
-    height: 100%;
     padding: 0;
     font-family: Arial, sans-serif;
     overflow:hidden;
@@ -10,19 +9,20 @@ body, html {
 
 body {
     border: 50px solid #ca421d;
-    background-color:rgb(44, 44, 44);
+    background-color:#ca421d;
 }
 
-#pokemon-info {
-    display: none;
-    text-align: center;
-    background-color:#b3e5a3;
-    padding: 100px;
-    height: 100%;
+.pokemon-wrapper, .poke-ball {
+    width: 50px;
+    height: 50px;
 }
 
-option {
-    text-align: center;
+
+.pokeball-container {
+    background-color: #ca421d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
@@ -50,30 +50,55 @@ h2 {
     padding: 30px;
     background-color:#ab3d1f;
     position: relative;
+    border-radius:8px 8px 0 0;
 }
 
-.pokemon-wrapper, .poke-ball {
-    width: 50px;
-    height: 50px;
+button {
+    border-radius: 20px;
+    background-color: white;
+    transition: 0.2s ease; 
+    cursor: pointer; 
 }
 
+button:hover {
+    background-color: rgb(185, 238, 201); 
+}
 
-.pokeball-container {
-    background-color: #ca421d;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#pokemon-info {
+    display: none;
+    text-align: center;
+    padding: 100px;
+    height: auto;
     justify-content: center;
+    margin: 0 auto;
+    padding: 2px 16px;
 }
 
-.d-pad {
-    width: 1000px;
-    height: 70px;
-    position: absolute;
-    top: 50%;
-    left: 8%; 
-    transform: translateY(-50%);
-    max-width: 10%; 
-}
+#pokemon-info {
+    margin: 0 auto;
+    padding: 50px;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .card {
+    border: 1px solid #ccc; 
+    border-radius: 0 0 8px 8px; 
+    padding: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    background-color: #ccf2a4; 
+  }
+  
 
+  /* Example media query for responsiveness */
+  @media only screen and (max-width: 600px) {
+    #pokemon-info {
+      padding: 10px;
+    }
+  }
 
