@@ -1,24 +1,39 @@
 console.log('Hello, World!');
 
 
-// fetch their data
+ // fetching the data
 async function fetchPokemonData(url) {
   try {
       const response = await fetch(url);
       if (!response.ok) {
           throw new Error('Failed to fetch Pokémon data');
       }
-      const pokemonData = await response.json();
-      return pokemonData;
+      return await response.json();
   } catch (error) {
       console.error('Error fetching Pokémon data:', error);
   }
 }
 
+// getting the the dropdown data?
+async function populatePokemonDropdown(url) {
+  try {
+      const data = await fetchPokemonData(url);
+      const select = document.getElementById('pokemon-select');
+      data.results.forEach(pokemon => {
+          const option = document.createElement('option');
+          option.text = pokemon.name.toUpperCase();
+          option.value = pokemon.url;
+          select.appendChild(option);
+      });
+  } catch (error) {
+      console.error('Error populating Pokémon dropdown:', error);
+  }
+}
 
-// all the info stuff
-document.addEventListener('DOMContentLoaded', () => {
+// All the info I want w/ the selection plus button//
+document.addEventListener('DOMContentLoaded', async () => {
   const select = document.getElementById('pokemon-select');
+  const submitButton = document.getElementById('submit-button');
   const infoDiv = document.getElementById('pokemon-info');
   const nameElem = document.getElementById('pokemon-name');
   const imageElem = document.getElementById('pokemon-image');
@@ -27,22 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const heightElem = document.getElementById('pokemon-height');
   const weightElem = document.getElementById('pokemon-weight');
 
+  // showing the actual names
+  await populatePokemonDropdown('https://pokeapi.co/api/v2/pokemon?limit=88');
 
-  // fetching the pokemon itself to appear?
-  fetch('https://pokeapi.co/api/v2/pokemon?limit=88')
-      .then(response => response.json())
-      .then(data => {
-          data.results.forEach(pokemon => {
-              const option = document.createElement('option');
-              option.text = pokemon.name;
-              option.value = pokemon.url;
-              select.appendChild(option);
-          });
-      });
-
-
-  // when you select a pokemon
-  select.addEventListener('change', async () => {
+  // the info displaying after pressing the submit button
+  submitButton.addEventListener('click', async () => {
       const selectedPokemonUrl = select.value;
       if (selectedPokemonUrl) {
           try {
@@ -54,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
               heightElem.textContent = pokemon.height;
               weightElem.textContent = pokemon.weight;
               infoDiv.style.display = 'block';
-
           } catch (error) {
               console.error('Error displaying Pokémon data:', error);
           }
