@@ -5,12 +5,11 @@ body, html {
     margin: 0;
 }
 
-
 body {
     border: 50px solid #ca421d;
     background-color:#ca421d;
 }
-
+/*beginning of the top half*/
 .pokemon-wrapper, .poke-ball {
     width: 50px;
     height: 50px;
@@ -42,7 +41,9 @@ h2 {
     margin: 0;
     padding-bottom: 20px;
 }
+/*end of the top half*/
 
+/*beginning of the selection section*/
 .selection-area {
     justify-content: center;
     text-align: center;
@@ -77,7 +78,9 @@ button {
 button:hover {
     background-color: rgb(185, 238, 201); 
 }
+/*end of the selection section*/
 
+/*start of the card section*/
 #pokemon-info {
     display: none;
     text-align: center;
@@ -101,16 +104,12 @@ button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     background-color: #ccf2a4; 
   }
-  
+/*end of the card section*/
+
+
 
 /*Media queries for responsiveness*/
-@media (max-width: 768px) {
-    h1 {
-        text-align: center; 
-        margin: 10px;
-        padding: 0;
-    }
-
+  @media (min-width: 300px) {
     #pokemon-name {
         margin: 0;
         text-align:center;
@@ -128,12 +127,37 @@ button:hover {
         text-align: center;
     }
 }
+@media (max-width: 768px) { /*especially mobile responsiveness*/
+    h1 {
+        text-align: center; 
+        margin: 10px;
+        padding: 0;
+    }
 
+    #pokemon-name {
+        margin: 0;
+        text-align: center;
+        align-items: center; /* Center vertically */
+    }
+    .button  {
+        margin: 10px;
+    }
 
-@media (min-width: 768px) {
+    #pokemon-info {
+        text-align: center; 
+    }
 
+    #pokemon-select{
+        justify-content: center;
+        text-align: center;
+    }
 }
 
-@media (min-width: 1200px) {
-
+@media (min-width: 270px) {
+    #pokemon-name {
+        text-align: center;
+        display: flex;
+        justify-content: center; 
+        margin: 10px;
+    }
 }

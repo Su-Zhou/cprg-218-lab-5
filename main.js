@@ -13,7 +13,7 @@ const fetchPokemonData = async (url) => {
   }
 };
 
-//dropdownn
+//dropdownn?
 const populatePokemonDropdown = async (url) => {
   try {
       const data = await fetchPokemonData(url);
@@ -29,7 +29,7 @@ const populatePokemonDropdown = async (url) => {
   }
 };
 
-//setting up ALL THE DATA that needs to be fetched?
+//setting up ALL THE DATA that needs to be fetched
 document.addEventListener('DOMContentLoaded', async () => {
   const select = document.querySelector('#pokemon-select');
   const submitButton = document.querySelector('#submit-button');
@@ -46,12 +46,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   await populatePokemonDropdown('https://pokeapi.co/api/v2/pokemon?limit=150'); //actually fetching 150
 
-  //displaying the info after select and submit
+  //to display the info i picked out after you select and submit
   submitButton.addEventListener('click', async () => { 
       const selectedPokemonUrl = select.value;
       if (selectedPokemonUrl) {
           try {
-              const pokemon = await fetchPokemonData(selectedPokemonUrl); //getting the specific the stats!//
+              const pokemon = await fetchPokemonData(selectedPokemonUrl); //getting the specific the stats//
               nameElem.textContent = pokemon.name.toUpperCase();
               imageElem.src = pokemon.sprites.front_default;
               typesElem.textContent = pokemon.types.map(type => type.type.name).join(', ');
